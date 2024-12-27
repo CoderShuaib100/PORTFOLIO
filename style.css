@@ -1,9 +1,12 @@
 /* google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 *::-webkit-scrollbar {
     display: none;
 }
+
 
 body{
     -ms-overflow-style: none;  /* IE and Edge */
@@ -23,7 +26,7 @@ body{
 }
 
 #main{
-    background-color: #f5ffba;
+    background-color: rgb(21, 21, 21);
     overflow: hidden;
     padding-left: 0;
     padding-right: 0;
@@ -32,11 +35,13 @@ body{
 #main-text{
     font-size: 70px;
     z-index: 3;
+    color: white;
 }
 
 #first-cont{
     padding-top: 150px;
     padding-bottom: 150px;
+    color: white;
     z-index: 2;
 }
 
@@ -52,8 +57,8 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #f5ffba;
-    border-left: 2px solid black;
+    background-color: rgb(21, 21, 21);
+    border-left: 2px solid gold;
     left: 0;
     overflow: hidden;
     animation: type 4s steps(6) infinite;
@@ -65,25 +70,8 @@ body{
     padding-bottom: 80px;
 }
 
-#text-qual{
-    position: relative;
-    overflow: hidden;
-    font-family: monospace,sans-serif;
-    font-weight: bolder;
-    font-size: 45px;
-}
-
-#text-qual::before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    border-left: 3px solid blue;
-    left: 0;
-    overflow: hidden;
-    animation: typing-animation1 4s steps(6) infinite;
-    animation-fill-mode: both;
+#element{
+  color: rgb(0, 195, 255);
 }
 
 #temp-text{
@@ -96,6 +84,9 @@ body{
     z-index: 3;
     position: relative;
     width: 100%;
+    border-radius: 20px;
+    border: 2px gold solid;
+    transform: skewX(-15deg);
     height: auto;
 }
 
@@ -118,6 +109,67 @@ body{
     position: relative;
     top: -15px;
 }
+.navbar-theme{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  padding: 5px 5px;
+}
+
+#logo{
+  color: black;
+  font-size: 48px;
+  font-weight: bolder;
+  font-family: "Kanit",sans-serif;
+  font-style: italic;
+  letter-spacing: 1px;
+  transition: letter-spacing 0.2s,background-position 1s ease;
+  color: transparent;
+  background-image: linear-gradient(90deg, rgba(255,198,123,1) 0%, rgba(75,75,255,1) 22%, rgba(244,255,165,1) 50%, rgba(255,119,119,1) 82%, rgba(0,212,255,1) 100%);
+  background-position:0;
+  background-size:200% 100%;
+  background-clip:text;
+  -webkit-background-clip:text;
+}
+
+#logo:hover{
+  background-position:100%;
+  letter-spacing: 5px;
+}  
+
+.btns-main{
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(253, 207, 89);
+  background: rgba( 48, 0, 255, 0.1 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 3.5px );
+-webkit-backdrop-filter: blur( 3.5px );
+border-radius: 10px;
+border: 2px solid rgb(18, 250, 18);
+  position: relative;
+  transition: font-size 0.2s,background-color 0.4s,transform 0.2s;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+}
+
+.navbar{
+  border-bottom:2px solid whites;
+}
+
+.btns-main:hover{
+  transform: translateY(25px) scale(1.1);
+}
+
+.links-nav{
+  text-decoration: none;
+  color: rgb(253, 207, 89);
+}
 
 /* animations */
 @keyframes type {
@@ -129,67 +181,117 @@ body{
     }
 }
 
-/* for python */
-@keyframes typing-animation1 {
-    0% {
-      left: 0%;
-    }
-    16.67% {
-      left: 16.67%;
-    }
-    33.33% {
-      left: 33.33%;
-    }
-    50% {
-      left: 50%;
-    }
-    66.67% {
-      left: 66.67%;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-/* /for python */
 
-@keyframes typing-animation {
-    0% {
-      left: 0%;
-    }
-    8.33% {
-      left: 8.33%;
-    }
-    16.67% {
-      left: 16.67%;
-    }
-    25% {
-      left: 25%;
-    }
-    33.33% {
-      left: 33.33%;
-    }
-    41.67% {
-      left: 41.67%;
-    }
-    50% {
-      left: 50%;
-    }
-    58.33% {
-      left: 58.33%;
-    }
-    66.67% {
-      left: 66.67%;
-    }
-    75% {
-      left: 75%;
-    }
-    83.33% {
-      left: 83.33%;
-    }
-    91.67% {
-      left: 91.67%;
-    }
-    100% {
-      left: 100%;
+  @media only screen and (max-width: 1025px) {
+    .navbar-theme{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      padding: 5px 5px;
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    .btns-main{
+      font-size: 15px;
+    }
+  }
+
+.hobbies{
+  height: fit-content;
+  background-color: rgb(21, 21, 21);
+  border: 2px solid red;
+  font-style: italic;
+  text-align: center;
+}
+
+.s3-t{
+  font-weight: bolder;
+  font-family: "Archivo Black";
+  background-clip: text;
+  height: fit-content ;
+  background: red;
+  text-shadow: 2px 2px 3px gold;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 70px;
+  background-position: 0;
+}
+
+.h-img{
+  border-radius: 12px;
+  height: auto;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+
+.CTA{
+  display: flex;
+  height: fit-content;
+  gap: 20px;
+  justify-content: center;
+}
+.modal-ctas{
+  border: 2px solid gray;
+  border-radius: 100%;
+  font-size: 30px;
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+  transition: transform 2s;
+}
+
+.modal-ctas::after{
+  content: "";
+  border-radius: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.25s;
+  transform: scale(0);
+  background-color: green;
+}
+
+.modal-ctas:hover.modal-ctas::after{
+  transition: transform 0.25s;
+  transform: scale(1);
+}
+
+
+.mc1::after{
+  background-color: red;
+}
+
+.mc2::after{
+  background: rgb(235, 162, 28);
+}
+
+.mc4::after{
+  background-color: blue;
+}
+
+@keyframes scale{
+  to{
+    scale: 1;
+  }
+}
+
+@property --scale {
+  syntax: "<value>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.h-r{
+  margin-top: 10px;
+  margin-bottom: 35px;
+}

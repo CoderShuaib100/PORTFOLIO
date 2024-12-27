@@ -11,48 +11,33 @@
  <!-- Link to Bootstrap CSS -->
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
  <!-- TYPED JS CDN -->
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>  
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<!-- FONTS CSS GOOGLE   -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=send" />
+<!-- fonts awesome cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-<header>
-    <div id="banner" class="text-center container-fluid">
-        <h3 class="my-auto" id="CHRISTMAS-counter"></h3> 
-    </div>
-</header>
 <section id="main" class="container-fluid">
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg border border-dark">
-    <div class="container-fluid" id="navbar-theme">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
+    <!-- navbar -->
+     <nav class="navbar ">
+     <div class="container-fluid navbar-theme">
+      <div id="logo">
+        <span>SHUAIB</span>
       </div>
-    </div>
-  </nav>
- <!-- /navbar -->
+      <div id="btns-main">
+        <button class="btns-main">HOME</button>
+        <button class="btns-main"><a class="links-nav" href="#my-qualification">LOOK-IN</a></button>
+        <button class="btns-main">FEEDBACK</button>
+        <button class="btns-main" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btns-main">JOIN US</button>
+      </div>
+      <div id="AB">
+        <button class="btns-main b5">ABOUT US
+        </button>
+      </div>
+     </div>
+    </nav>
+     <!-- /navbar -->
 <div class="container" id="first-cont">
     <div class="row">
         <div class="col-12 col-lg-6">
@@ -79,7 +64,54 @@
         <div data-aos="flip-up" class="col-6 col-lg-3"><img class="medals" src="ASSETS/QUAL-CONT/WEB_DEVELOPER_MEDAL-ADVANCED-removebg-preview.png" alt=""></div>
         <div data-aos="flip-up" class="col-6 col-lg-3"><img class="medals" src="ASSETS/QUAL-CONT/THUNKABLE_MEDAL-removebg-preview.png" alt=""></div></div></div>
 </section>
-
+<div class="container-fluid hobbies">
+  <div class="row">
+  <span class="s3-t">HOBBY</span>
+  </div>
+<div class="row h-r">
+  <div class="col"><img class="h-img hm1" src="ASSETS/HOBBY/BLENDER.png" alt=""></div>
+  <div class="col"><img class="h-img hm2" src="ASSETS/HOBBY/code.png" alt=""></div>
+  <div class="col"><img class="h-img hm3" src="ASSETS/HOBBY/youtuber.png" alt=""></div>
+</div>
+<div class="row h-r">
+  <div class="col"><img class="h-img" src="ASSETS/HOBBY/e-set.jpeg" alt=""></div>
+  <div class="col"><img class="h-img" src="ASSETS/HOBBY/vg.jpeg" alt=""></div>
+  <div class="col"><img class="h-img" src="ASSETS/HOBBY/game building.jpg" alt=""></div>
+</div>
+</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header bg-dark text-light text-center">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">CONTACT US</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+          <input type="email" class="form-control bg-dark text-light" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Enter your message</label>
+          <textarea class="form-control bg-dark text-light" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="CTA">
+          <span><i class="fa-brands modal-ctas mc1 fa-youtube"></i></span>
+          <span><i class="fa-brands modal-ctas mc2 fa-instagram"></i></span>
+          <span><i class="fa-brands modal-ctas mc3 fa-whatsapp"></i></span>
+          <span><i class="fa-brands modal-ctas mc4 fa-facebook"></i></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">SEND<span class="material-symbols-outlined text-center">send</span></button>
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
