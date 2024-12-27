@@ -199,6 +199,10 @@ border: 2px solid rgb(18, 250, 18);
     .btns-main{
       font-size: 15px;
     }
+    #timetext{
+      font-size: 100%;
+      margin-top: 25%;
+    }
   }
 
 .hobbies{
@@ -294,4 +298,74 @@ border: 2px solid rgb(18, 250, 18);
 .h-r{
   margin-top: 10px;
   margin-bottom: 35px;
+}
+
+#section4{
+  background-color: rgb(21, 21, 21);
+}
+
+#s4t{
+  color: green;
+  font-weight: bolder;
+  display: flex;
+  font-style: italic;
+  font-size: 70px;
+  text-shadow: 2px 2px 5px red;
+  justify-content: center;
+}
+
+#WB{
+  height: 60%;
+  width: 60%;
+  z-index: 1;
+  position: relative;
+  z-index: 1;
+}
+
+#timetext{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  font-size: 320%;
+  position: absolute;
+  margin-top: 25%;
+  transition: margin-top 0.25s,font-size 0.25s;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1150px) {
+  #timetext{
+    font-size: 200%;
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #timetext{
+    font-size: 185%;
+    margin-top: 23%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #timetext{
+    font-size: 170%;
+    margin-top: 25%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #timetext{
+    font-size: 130%;
+    margin-top: 25%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #timetext{
+    font-size: 90%;
+    margin-top: 22%;
+  }
 }
