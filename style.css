@@ -412,6 +412,7 @@ border: 2px solid rgb(18, 250, 18);
   color: white;
   font-size: 50px;
   overflow: hidden;
+  padding: 10px;
 }
 
 #c-bt-body{

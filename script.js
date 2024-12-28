@@ -45,89 +45,58 @@ setInterval(setTime,1000);
 setTime();
 
 var dis = "";
-var oldValue = "";
-var operator = "";
+var expression = "";
 
 function calc(id) {
     var value = document.getElementById(id).innerText;
-    console.log("Button Clicked: " + value);
+    console.log("Button Clicked is: " + value);
+
     if (value === "=") {
         calculate();
     } 
-    else if (value === "+"){
-        oldValue = dis;
-        operator = value;
-        dis = "";
-        document.getElementById("screen").innerHTML = oldValue + " " + operator;
-    }
-
-    else if ( value === "-"){
-        oldValue = dis;
-        operator = value;
-        dis = "";
-        document.getElementById("screen").innerHTML = oldValue + " " + operator;
-    }
-    
-    else if (value === "÷") {
-        oldValue = dis;
-        operator = value;
-        dis = "";
-        document.getElementById("screen").innerHTML = oldValue + " " + operator;
-    }
-
-    else if (value === "X"){
-        oldValue = dis;
-        operator = "X";
-        dis = "";
-        document.getElementById("screen").innerHTML = oldValue + " " + operator;
-    }
-    else if (value === "="){
-        calculate();
-    }
-    else if (value === "AC"){
+    else if (value === "AC") {
         document.getElementById("screen").innerHTML = "";
-        dis = '';
-        oldValue = "";
-        operator = "";
+        dis = "";
+        expression = "";
     }
+    else if (value === "+") {
+        expression += value;
+        dis = "";
+        console.log(expression);
+    }
+    else if (value === "-") {
+        expression += value;
+        dis = "";
+        console.log(expression);
+    } 
+    else if (value === "X") {
+        value = "*";
+        expression += value;
+        dis = "";
+        console.log(expression);
+    } 
+    else if (value === "÷") {
+        value = "/";
+        expression += value;
+        dis = "";
+        console.log(expression);
+    }  
     else {
         dis += value;
-        document.getElementById("screen").innerHTML = dis;
+        expression += value;
+        document.getElementById("screen").innerHTML = expression;
+        console.log(expression);
     }
 }
 
-function calculate(){
-    var result;
-    var currentValue = dis; 
-    var previousValue = oldValue;
-    expression = "";
-    console.log(oldValue);
-    console.log(dis);
-    
-    
-    if (operator === "+"){
-        expression = previousValue + "+" + currentValue;
-        console.log(expression);
-        result = eval(expression);
-    }
-    if (operator === "-"){
-        expression = previousValue + "-" + currentValue;
-        console.log(expression);
-        result = eval(expression);
-    }
-    if (operator === "X"){
-        expression = previousValue + "*" + currentValue;
-        console.log(expression);
-        result = eval(expression);
-    }
-    if (operator === "÷"){
-        expression = previousValue + "/" + currentValue;
-        console.log(expression);
-        result = eval(expression);
-    }
-    console.log(result);
-    document.getElementById("screen").innerHTML = result;
-    
+function calculate() {
+    var screenText = document.getElementById("screen").innerText;     
+    var result = eval(expression);
+    dis = result.toString();
+    document.getElementById("screen").innerHTML = dis;
+    expression = result.toString();
+    console.log(expression);       
 }
+
 
 
