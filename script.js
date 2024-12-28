@@ -43,3 +43,91 @@ function setTime(){
 }   
 setInterval(setTime,1000);
 setTime();
+
+var dis = "";
+var oldValue = "";
+var operator = "";
+
+function calc(id) {
+    var value = document.getElementById(id).innerText;
+    console.log("Button Clicked: " + value);
+    if (value === "=") {
+        calculate();
+    } 
+    else if (value === "+"){
+        oldValue = dis;
+        operator = value;
+        dis = "";
+        document.getElementById("screen").innerHTML = oldValue + " " + operator;
+    }
+
+    else if ( value === "-"){
+        oldValue = dis;
+        operator = value;
+        dis = "";
+        document.getElementById("screen").innerHTML = oldValue + " " + operator;
+    }
+    
+    else if (value === "÷") {
+        oldValue = dis;
+        operator = value;
+        dis = "";
+        document.getElementById("screen").innerHTML = oldValue + " " + operator;
+    }
+
+    else if (value === "X"){
+        oldValue = dis;
+        operator = "X";
+        dis = "";
+        document.getElementById("screen").innerHTML = oldValue + " " + operator;
+    }
+    else if (value === "="){
+        calculate();
+    }
+    else if (value === "AC"){
+        document.getElementById("screen").innerHTML = "";
+        dis = '';
+        oldValue = "";
+        operator = "";
+    }
+    else {
+        dis += value;
+        document.getElementById("screen").innerHTML = dis;
+    }
+}
+
+function calculate(){
+    var result;
+    var currentValue = dis; 
+    var previousValue = oldValue;
+    expression = "";
+    console.log(oldValue);
+    console.log(dis);
+    
+    
+    if (operator === "+"){
+        expression = previousValue + "+" + currentValue;
+        console.log(expression);
+        result = eval(expression);
+    }
+    if (operator === "-"){
+        expression = previousValue + "-" + currentValue;
+        console.log(expression);
+        result = eval(expression);
+    }
+    if (operator === "X"){
+        expression = previousValue + "*" + currentValue;
+        console.log(expression);
+        result = eval(expression);
+    }
+    if (operator === "÷"){
+        expression = previousValue + "/" + currentValue;
+        console.log(expression);
+        result = eval(expression);
+    }
+    console.log(result);
+    document.getElementById("screen").innerHTML = result;
+    
+}
+
+
