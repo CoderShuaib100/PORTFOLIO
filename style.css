@@ -27,8 +27,8 @@ body{
 
 #main{
     background-color: rgb(21, 21, 21);
-    overflow: hidden;
     padding-left: 0;
+    height: 100%;
     padding-right: 0;
 }
 
@@ -109,68 +109,70 @@ body{
     position: relative;
     top: -15px;
 }
-.navbar-theme{
+/* Navbar adjustments */
+.navbar-theme {
+  position: sticky;
   display: flex;
   flex-direction: row;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  height: auto;
-  padding: 5px 5px;
+  height: 100px;
+  top: 0; /* Keeps the navbar at the top when scrolling */
+  background-color: rgb(21, 21, 21); /* Semi-transparent background */
+  z-index: 100; /* Ensures the navbar stays on top */
+  border-bottom: 1px solid white;
+  bottom: 0;
+  transition: all 0.6s;
 }
 
-#logo{
+#logo {
   color: black;
   font-size: 48px;
   font-weight: bolder;
-  font-family: "Kanit",sans-serif;
+  font-family: "Kanit", sans-serif;
   font-style: italic;
   letter-spacing: 1px;
-  transition: letter-spacing 0.2s,background-position 1s ease;
+  transition: letter-spacing 0.2s, background-position 1s ease;
   color: transparent;
   background-image: linear-gradient(90deg, rgba(255,198,123,1) 0%, rgba(75,75,255,1) 22%, rgba(244,255,165,1) 50%, rgba(255,119,119,1) 82%, rgba(0,212,255,1) 100%);
-  background-position:0;
-  background-size:200% 100%;
-  background-clip:text;
-  -webkit-background-clip:text;
+  background-position: 0;
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  cursor: none;
 }
 
-#logo:hover{
-  background-position:100%;
+#logo:hover {
+  background-position: 100%;
   letter-spacing: 5px;
-}  
+}
 
-.btns-main{
+.btns-main {
   font-size: 25px;
   font-weight: bold;
   color: rgb(253, 207, 89);
-  background: rgba( 48, 0, 255, 0.1 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 3.5px );
--webkit-backdrop-filter: blur( 3.5px );
-border-radius: 10px;
-border: 2px solid rgb(18, 250, 18);
+  background: rgba(48, 0, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 2px solid rgb(18, 250, 18);
   position: relative;
-  transition: font-size 0.2s,background-color 0.4s,transform 0.2s;
+  transition: font-size 0.2s, background-color 0.4s, transform 0.2s;
   perspective: 2000px;
   transform-style: preserve-3d;
-  border-radius: 12px;
 }
 
-.navbar{
-  border-bottom:2px solid whites;
-}
-
-.btns-main:hover{
+.btns-main:hover {
   transform: translateY(25px) scale(1.1);
 }
 
-.links-nav{
+.links-nav {
   text-decoration: none;
   color: rgb(253, 207, 89);
 }
-
 /* animations */
 @keyframes type {
     40%,60%{
@@ -180,30 +182,34 @@ border: 2px solid rgb(18, 250, 18);
         left: 0%;
     }
 }
+.navbar{
+  padding: 0;
+  position: sticky;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+  background-color: white;
 
+}
 
-  @media only screen and (max-width: 1025px) {
-    .navbar-theme{
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-      padding: 5px 5px;
-    }
+@media only screen and (max-width: 1025px) {
+  .navbar-theme {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 5px 5px;
   }
+}
 
-  @media only screen and (max-width: 600px) {
-    .btns-main{
-      font-size: 15px;
-    }
-    #timetext{
-      font-size: 100%;
-      margin-top: 25%;
-    }
+@media only screen and (max-width: 600px) {
+  .btns-main {
+    font-size: 15px;
   }
+}
 
 .hobbies{
   height: fit-content;
@@ -432,3 +438,55 @@ border: 2px solid rgb(18, 250, 18);
   padding: 0 0;
   text-align: center;
 }
+
+.footer{
+  background: rgb(21, 23, 21);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px );
+  border-top: 2px solid rgba(244, 244, 244, 0.3);
+  border-radius: 10px;
+  border-radius: 2px;
+  color: white;
+  text-shadow: 3px 3px 3px red;
+  height: auto;
+}
+
+#footer-holder{
+  background-color: rgb(21, 21, 21);
+  height: 350px;
+}
+
+.CTA-FOOTER{
+  margin-top: 30px;
+}
+
+.fcta:hover{
+  transform: translateY(-20px);
+  transition: all 0.2s;
+}
+
+#f-img{  
+  height: 350px;
+  text-align: center;
+}
+
+#ul-footer{
+  font-size: 20px;
+  list-style: none;
+}
+.fl-li{
+  transition: all 0.5s;
+}
+.fl-li:hover{
+  text-shadow: 3px 3px 3px green;
+  color: blue;
+  transition: all 0.5s;
+  cursor: crosshair;
+}
+.fl-li:hover::before{
+  content: "➤ ";
+}
+.fl-li::before{
+  content: "➤";
+}  

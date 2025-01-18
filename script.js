@@ -90,13 +90,53 @@ function calc(id) {
 }
 
 function calculate() {
-    var screenText = document.getElementById("screen").innerText;     
-    var result = eval(expression);
-    dis = result.toString();
-    document.getElementById("screen").innerHTML = dis;
-    expression = result.toString();
-    console.log(expression);       
+    try{
+        var screenText = document.getElementById("screen").innerText;     
+        var result = eval(expression);
+        dis = result.toString();
+        document.getElementById("screen").innerHTML = dis;
+        expression = result.toString();
+        console.log(expression);       
+    }
+    catch(err){
+        document.getElementById("screen").innerHTML = err;
+    }
 }
 
+// Get the navbar element
+const navbar = document.querySelector('.navbar-theme');
+
+// Add an event listener for the scroll event
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {  // If the page is scrolled down
+        navbar.style.backgroundColor = 'rgba(21, 21, 21, 0.95)';  // Change the navbar background color
+    } else {
+        navbar.style.backgroundColor = 'rgba(21, 21, 21, 1)';  // Original background color
+    }
+});
+
+function FBalt(msg) {
+    let inputtag = "";
+    let emtag = "";
+  
+    // Check which form (Support or Feedback) is being used
+    if (msg == "Support.") {
+      inputtag = document.getElementById("exampleFormControlTextarea1").value;
+      emtag = document.getElementById("exampleFormControlInput1").value;
+    } else if (msg == "FEEDBACK.") {
+      inputtag = document.getElementById("exampleFormControlTextarea12").value;
+      emtag = document.getElementById("exampleFormControlInput12").value;
+    } else {
+      alert("An error occurred. Try again.");
+      return;
+    }
+    // If any of the fields is empty, show an alert
+    if (inputtag == "" || emtag == "") {
+      alert("Please Fill The Form Properly");
+    } else {
+      alert("Thank You for Your " + msg + "Please use the close button to close this Dialog Box");  // Show thank you message
+    }
+  }
+  
 
 
